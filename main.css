@@ -1,0 +1,509 @@
+:root {
+  --main-color: #8500d8;
+  --font-size-text: 1rem;
+  --font-family: "Montserrat Alternates", sans-serif;
+}
+
+@font-face {
+  font-family: "Coolvetica"; /* Название шрифта */
+  src: url("fonts/coolveticarg.ttf") format("ttf"); /* Путь к файлу */
+  font-weight: normal;
+  font-style: normal;
+}
+
+p,
+h1 {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat Alternates", sans-serif;
+  background-color: var(--main-color);
+}
+
+.wrap {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.title {
+  font-family: "Coolvetica", sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after,
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: white;
+  border-radius: 0;
+  height: 3px;
+}
+.hamburger-inner::before {
+  display: none;
+}
+.hamburger.is-active .hamburger-inner {
+  top: 16px;
+}
+
+.hamburger {
+  background-color: #8500d8;
+  height: 60px;
+  width: 60px;
+  border-radius: 100px;
+}
+
+.hamburger-box {
+  position: relative;
+  top: -4px;
+  right: 5px;
+  display: block;
+}
+
+.header {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  transition: background-color 0.3s ease;
+  z-index: 100;
+  height: 80px;
+}
+.header.is-active {
+  background-color: #8500d8;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 10px;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none; /* блокируем клики, когда скрыто */
+  transition: opacity 0.3s ease;
+  background-color: #8500d8;
+  z-index: 90;
+}
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+}
+.menu li {
+  margin-bottom: 10px;
+}
+.menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.intro__title h1 {
+  text-align: center;
+  font-family: "Coolvetica", sans-serif;
+  font-weight: 500;
+}
+
+.intro__pictures {
+  position: relative;
+}
+
+.intro__picture img {
+  width: 100%;
+}
+
+.intro__picture--2 {
+  position: absolute;
+  top: -20px;
+  left: 50%; /* ставит левый край элемента в центр родителя */
+  transform: translateX(-50%); /* смещает элемент на 50% назад к центру */
+}
+.intro__picture--2 img {
+  width: 300px; /* или 50%, auto, 10rem и т.д. */
+  height: auto;
+}
+
+.intro__picture--3 img {
+  width: 150px;
+  height: auto;
+  width: 30%;
+  position: absolute;
+  top: -20px;
+  left: 0;
+}
+
+.intro__picture--4 img {
+  width: 150px;
+  height: auto;
+  width: 30%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.discount {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+  padding: 12px;
+  border-radius: 15px;
+  width: 100px;
+  margin-bottom: 20px;
+}
+.discount__text {
+  margin: 0;
+  color: white;
+  text-align: center;
+  font-weight: 500;
+}
+
+.intro__prices {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+.intro__prices-price {
+  margin-right: 25px;
+  position: relative;
+}
+.intro__prices-price-label,
+.intro__prices-price-value {
+  margin: 0;
+  text-align: center;
+}
+.intro__prices-price-value {
+  font-weight: 600;
+}
+.intro__prices-price-line {
+  width: 100%;
+  height: 1px;
+  background-color: red;
+  position: absolute;
+  bottom: 20px;
+}
+
+.intro__button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.button {
+  padding: 25px;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 100px;
+  font-size: var(--font-size-text);
+  font-family: var(--font-family);
+  background: #8500d8;
+  background: linear-gradient(
+    90deg,
+    rgba(133, 0, 216, 1) 0%,
+    rgba(70, 0, 114, 1) 100%
+  );
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+}
+
+.uspblock--1 {
+  background-color: var(--main-color);
+  margin-bottom: 35px;
+}
+
+.uspblock__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uspblock__text--1 {
+  width: 40%; /* ограничиваем ширину текста */
+}
+
+.uspblock__text--1 p {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.uspblock__line img {
+  width: 2px;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.uspblock__text--2 {
+  margin-bottom: 25px;
+}
+
+.uspblock__icon {
+  display: flex;
+  justify-content: center;
+}
+
+.uspblock--2 {
+  margin-bottom: 80px;
+}
+
+.uspblock__text--2 p {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+}
+
+.infoblock {
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin-bottom: 80px;
+}
+
+.infoblock__title {
+  margin-bottom: 35px;
+}
+
+.infoblock__picture {
+  display: flex;
+  justify-content: center;
+}
+
+.infoblock__picture img {
+  width: 100%;
+}
+
+.advantages {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+
+.advantages__title {
+  margin-bottom: 45px;
+}
+
+.advantages__item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 300px;
+  margin-bottom: 35px;
+}
+
+.advantages__item-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--main-color);
+  padding: 10px;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.advantages__item-text {
+  text-align: center;
+}
+
+.advantages__item-text span {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.symptoms {
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin-bottom: 80px;
+}
+
+.symptoms__list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.symptoms__list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.symptoms__list li::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 80px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: var(--main-color) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--swiper-pagination-color, var(--main-color)) !important;
+}
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews__content {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.reviews__name {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.reviews__text {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form {
+  padding: 20px;
+  margin-bottom: 80px;
+}
+
+.form__input {
+  margin-bottom: 10px;
+}
+
+.form__input input {
+  background-color: #ededed;
+  border: none;
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  font-family: var(--font-family);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form__input label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form__input select {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer {
+  background-color: var(--main-color);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Контейнер */
+.modal__content {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+  position: relative;
+}
+
+/* Заголовок по центру */
+.modal__title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Крестик внутри окна */
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+.modal__close:hover {
+  color: #000;
+}
+
+/* Анимация */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer__content {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
