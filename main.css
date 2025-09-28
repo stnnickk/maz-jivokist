@@ -5,8 +5,9 @@
 }
 
 @font-face {
+  src: url("fonts/CoolveticaRg-Regular.woff2") format("woff2"),
+    url("fonts/CoolveticaRg-Regular.woff") format("woff");
   font-family: "Coolvetica"; /* Название шрифта */
-  src: url("fonts/coolveticarg.ttf") format("ttf"); /* Путь к файлу */
   font-weight: 500;
   font-style: normal;
 }
@@ -518,3 +519,4 @@ body {
   text-align: center;
   padding: 20px;
 }
+
