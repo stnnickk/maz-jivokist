@@ -506,9 +506,13 @@ body {
 
 /* Заголовок по центру */
 .modal__title {
-  font-size: 22px;
+  font-size: 1.125rem;
   font-weight: bold;
   margin-bottom: 15px;
+}
+
+.modal__text {
+  font-size: var(--font-size-text);
 }
 
 /* Крестик внутри окна */
