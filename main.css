@@ -198,8 +198,10 @@ body {
   margin-bottom: 26px;
 }
 .intro__prices-price {
-  margin-right: 25px;
   position: relative;
+}
+.intro__prices-price--1 {
+  margin-right: 25px;
 }
 .intro__prices-price-label,
 .intro__prices-price-value {
@@ -519,5 +521,6 @@ body {
   text-align: center;
   padding: 20px;
 }
+
 
 
